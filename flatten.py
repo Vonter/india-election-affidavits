@@ -7,9 +7,9 @@ import sys
 
 from bs4 import BeautifulSoup
 
-def flatten_data(folder, elections):
+def flatten_data(house, elections):
 
-    folderDataFrame = pd.DataFrame()
+    houseDataFrame = pd.DataFrame()
 
     # Iterate over every election
     for election in elections:
@@ -17,7 +17,7 @@ def flatten_data(folder, elections):
         electionDataFrame = pd.DataFrame()
 
         # Specify the directory containing HTML files
-        html_dir = "./raw/{}/{}".format(folder, election)
+        html_dir = "./raw/{}/{}".format(house, election)
 
         # Iterate over the files in the directory
         for file_name in os.listdir(html_dir):
@@ -97,13 +97,11 @@ def flatten_data(folder, elections):
                     # Add columns for election details
                     div = soup.find('div', class_='w3-light-gray')
                     try:
+                        pattern = r'\d+'
                         div = div.text
-                        house = div.split("→")[1]
+                        year = re.findall(pattern, div.split("→")[1])[0].lstrip().rstrip()
                         state = div.split("→")[2].lstrip().rstrip()
                         constituency = div.split("→")[3].lstrip().rstrip()
-                        pattern = r'\d+'
-                        year = re.findall(pattern, house)[0].lstrip().rstrip()
-                        house = house.split(year)[0].lstrip().rstrip()
 
                         if ":" in constituency:
                             comment = constituency.split(":")[1].lstrip().rstrip()
@@ -112,8 +110,8 @@ def flatten_data(folder, elections):
                             comment = "No Comment"
                     except:
                         print(div)
-                    dataFrame['Constituency'] = constituency
-                    dataFrame['State'] = state
+                    dataFrame['Constituency'] = constituency.upper()
+                    dataFrame['State'] = state.upper()
                     dataFrame['Year'] = year
                     dataFrame['House'] = house
                     dataFrame['Comment'] = comment
@@ -139,16 +137,16 @@ def flatten_data(folder, elections):
         # Save the electionDataFrame
         electionDataFrame.to_csv('csv/{}/{}/Election.csv'.format(house, year), index=False, sep=";", quoting=csv.QUOTE_ALL)
 
-        # Aggregate every electionDataFrame into a folderDataFrame
+        # Aggregate every electionDataFrame into a houseDataFrame
         try:
             electionDataFrame.reset_index(inplace=True, drop=True)
-            folderDataFrame.reset_index(inplace=True, drop=True)
-            folderDataFrame = pd.concat([folderDataFrame, electionDataFrame], ignore_index = True)
+            houseDataFrame.reset_index(inplace=True, drop=True)
+            houseDataFrame = pd.concat([houseDataFrame, electionDataFrame], ignore_index = True)
         except:
             print(electionDataFrame)
             raise
 
-    # Save the folderDataFrame
-    folderDataFrame.to_csv('csv/{}/Candidates.csv'.format(house, year), index=False, sep=";", quoting=csv.QUOTE_ALL)
+    # Save the houseDataFrame
+    houseDataFrame.to_csv('csv/{}/Candidates.csv'.format(house), index=False, sep=";", quoting=csv.QUOTE_ALL)
 
 flatten_data("Lok Sabha", ["2019", "2014", "2009", "2004"])
