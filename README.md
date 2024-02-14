@@ -8,6 +8,12 @@ Browse the dataset here: <https://flatgithub.com/Vonter/india-election-affidavit
 
 - [fetch.sh](fetch.sh): Fetches the raw HTML pages from [MyNeta](https://myneta.info/)
 - [flatten.py](flatten.py): Parses the raw HTML pages, and generates the CSV dataset
+- [append.py](append.py): Extends the base CSV dataset with additional columns
+
+## Extended
+
+The base CSV dataset has been extended with additional columns - for integrating with other datasets:
+- [shapefile.csv](extended/shapefile.csv): `pc_id` column for mapping to [Parliamentary Constituencies Shapefile (2019)](https://github.com/datameet/maps/blob/master/parliamentary-constituencies/india_pc_2019_simplified.geojson)
 
 ## License
 
@@ -36,6 +42,9 @@ bash fetch.sh
 
 # Generate the CSV
 python flatten.py
+
+# Include additional columns
+python append.py
 ```
 
 The fetch script sources data from MyNeta (https://myneta.info/)
@@ -52,3 +61,7 @@ The fetch script sources data from MyNeta (https://myneta.info/)
 
 - [MyNeta](https://myneta.info/)
 - [Association for Democratic Reforms (ADR)](https://adrindia.org)
+
+## Related
+
+- [Parliamentary Constituencies Shapefile (2019)](https://github.com/datameet/maps/blob/master/parliamentary-constituencies/india_pc_2019_simplified.geojson) ([thanks to @planemad for the `pc_id` mapping](https://github.com/Vonter/india-election-affidavits/issues/1#issue-2132946129))
