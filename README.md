@@ -12,8 +12,12 @@ Browse the dataset here: <https://flatgithub.com/Vonter/india-election-affidavit
 
 ## Extended
 
-The base CSV dataset has been extended with additional columns - for integrating with other datasets:
-- [shapefile.csv](extended/shapefile.csv): `pc_id` column for mapping to [Parliamentary Constituencies Shapefile (2019)](https://github.com/datameet/maps/blob/master/parliamentary-constituencies/india_pc_2019_simplified.geojson)
+The base CSV dataset has been extended with additional columns in [extended/Candidates.csv](extended/Candidates.csv) - for mapping with other datasets:
+- `pc_id` for mapping to [Parliamentary Constituencies Shapefile (2019)](https://github.com/datameet/maps/blob/master/parliamentary-constituencies/india_pc_2019_simplified.geojson)
+- `Code` for mapping to [LGD Codes](https://ramseraph.github.io/opendata/lgd/)
+- `Status` to indicate if the constituency has been abolished
+
+Thanks to [planemad](https://github.com/Vonter/india-election-affidavits/pull/3) for the mapping columns
 
 ## License
 
@@ -61,7 +65,3 @@ The fetch script sources data from MyNeta (https://myneta.info/)
 
 - [MyNeta](https://myneta.info/)
 - [Association for Democratic Reforms (ADR)](https://adrindia.org)
-
-## Related
-
-- [Parliamentary Constituencies Shapefile (2019)](https://github.com/datameet/maps/blob/master/parliamentary-constituencies/india_pc_2019_simplified.geojson) ([thanks to @planemad for the `pc_id` mapping](https://github.com/Vonter/india-election-affidavits/issues/1#issue-2132946129))
