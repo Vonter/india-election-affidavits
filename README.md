@@ -51,7 +51,6 @@ The fetch script sources data from MyNeta (https://myneta.info/)
 
 ## TODO
 
-- State Assemblies
 - Local Bodies
 - Rajya Sabha
 - Election Expenses
