@@ -2,11 +2,16 @@
 
 Dataset of candidate affidavits filed during elections. Sourced from [MyNeta](https://myneta.info/), an open data repository platform of [Association for Democratic Reforms (ADR)](https://adrindia.org). Information submitted by candidates in their affidavits are not guaranteed to match reality.
 
-Browse the dataset here: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Lok%20Sabha/Candidates.csv&stickyColumnName=Candidate>.
+Browse the dataset using the below links:
+- Lok Sabha: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Lok%20Sabha/Candidates.csv&stickyColumnName=Candidate>.
+- State Assemblies: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/State%20Assemblies/Candidates.csv&stickyColumnName=Candidate>.
+- All Candidates: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Candidates.csv&stickyColumnName=Candidate>.
+
+More CSV files can be found under the [csv/](csv) folder in this repository.
 
 ## Scripts
 
-- [fetch.sh](fetch.sh): Fetches the raw HTML pages from [MyNeta](https://myneta.info/)
+- [fetch.py](fetch.py): Fetches the raw HTML pages from [MyNeta](https://myneta.info/)
 - [flatten.py](flatten.py): Parses the raw HTML pages, and generates the CSV dataset
 - [append.py](append.py): Extends the base CSV dataset with additional columns
 
@@ -38,11 +43,11 @@ As long as you:
 
 ## Generating
 
-Ensure you have `bash`, `curl` and `python` installed
+Ensure you have `python` installed with the required libraries:
 
 ```
 # Fetch the data
-bash fetch.sh
+python fetch.py
 
 # Generate the CSV
 python flatten.py
@@ -55,7 +60,6 @@ The fetch script sources data from MyNeta (https://myneta.info/)
 
 ## TODO
 
-- State Assemblies
 - Local Bodies
 - Rajya Sabha
 - Election Expenses
