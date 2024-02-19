@@ -6,7 +6,7 @@ Browse the dataset here: <https://flatgithub.com/Vonter/india-election-affidavit
 
 ## Scripts
 
-- [fetch.sh](fetch.sh): Fetches the raw HTML pages from [MyNeta](https://myneta.info/)
+- [fetch.py](fetch.py): Fetches the raw HTML pages from [MyNeta](https://myneta.info/)
 - [flatten.py](flatten.py): Parses the raw HTML pages, and generates the CSV dataset
 - [append.py](append.py): Extends the base CSV dataset with additional columns
 
@@ -34,11 +34,11 @@ As long as you:
 
 ## Generating
 
-Ensure you have `bash`, `curl` and `python` installed
+Ensure you have `python` installed with the required libraries:
 
 ```
 # Fetch the data
-bash fetch.sh
+python fetch.py
 
 # Generate the CSV
 python flatten.py
