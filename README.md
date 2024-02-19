@@ -2,7 +2,12 @@
 
 Dataset of candidate affidavits filed during elections. Sourced from [MyNeta](https://myneta.info/), an open data repository platform of [Association for Democratic Reforms (ADR)](https://adrindia.org). Information submitted by candidates in their affidavits are not guaranteed to match reality.
 
-Browse the dataset here: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Lok%20Sabha/Candidates.csv&stickyColumnName=Candidate>.
+Browse the dataset using the below links:
+- Lok Sabha: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Lok%20Sabha/Candidates.csv&stickyColumnName=Candidate>.
+- State Assemblies: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/State%20Assemblies/Candidates.csv&stickyColumnName=Candidate>.
+- All Candidates: <https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Candidates.csv&stickyColumnName=Candidate>.
+
+More CSV files can be found under the [csv/](csv) folder in this repository.
 
 ## Scripts
 
