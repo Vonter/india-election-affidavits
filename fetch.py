@@ -100,10 +100,10 @@ def fetch_states(states, raw_dir):
 def fetch_lok_sabha(html_content):
     # Parse the HTML content with BeautifulSoup
     soup = BeautifulSoup(html_content, 'html.parser')
-    divs = soup.find(id="ls").find_next('div').find_all(class_="w3-padding-small")
+    divs = soup.find_all(id="ls")[1].find_next('div').find_all(class_="w3-padding-small")
     hrefs = [div.get('href') for div in divs if div.get('href') is not None]
     # include lsdiv in separate sibling div
-    sibling_divs = soup.find(id="ls").find_next_siblings('div')[1].find_all(class_="w3-padding-small")
+    sibling_divs = soup.find_all(id="ls")[1].find_next_siblings('div')[1].find_all(class_="w3-padding-small")
     sibling_hrefs = [sibling_div.get('href') for sibling_div in sibling_divs if sibling_div.get('href') is not None]
 
     hrefs = hrefs + [sibling_hrefs[0]]
