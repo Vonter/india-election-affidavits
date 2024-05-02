@@ -24,6 +24,13 @@ The base CSV dataset has been extended with additional columns in [extended/Cand
 
 Thanks to [planemad](https://github.com/Vonter/india-election-affidavits/pull/3) for the mapping columns
 
+## Candidate Profiles
+
+Candidate profiles dataset and related scripts can be found under the [profiles/](profiles/) folder. The dataset includes information shown under the candidate's profile page on the ECI website (name, party name, age, gender, address). `*.sh` scripts fetch data from the ECI website. `flatten.py` parses the fetched HTML pages, and generates the CSV dataset.
+
+Browse the Candidate Profiles dataset using the below links:
+- [Parliamentary Elections](https://flatgithub.com/Vonter/india-election-affidavits?filename=profiles/csv/Candidates.csv&stickyColumnName=Candidate%20Name)
+
 ## License
 
 This india-election-affidavits dataset is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/. 
