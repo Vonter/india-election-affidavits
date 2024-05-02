@@ -1,2 +1,3 @@
 debug.log
-raw/**/index.html
+raw/**/*html
+profiles/raw/**
