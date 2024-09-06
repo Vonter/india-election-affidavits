@@ -3,9 +3,9 @@
 Dataset of candidate affidavits filed during elections. Sourced from [MyNeta](https://myneta.info/), an open data repository platform of [Association for Democratic Reforms (ADR)](https://adrindia.org). Information submitted by candidates in their affidavits are not guaranteed to match reality.
 
 Browse the dataset using the below links:
-- [Lok Sabha](https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Lok%20Sabha/Candidates.csv&stickyColumnName=Candidate)
-- [State Assemblies](https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/State%20Assemblies/Candidates.csv&stickyColumnName=Candidate)
-- [All Candidates](https://flatgithub.com/Vonter/india-election-affidavits?filename=csv/Candidates.csv&stickyColumnName=Candidate)
+- [Lok Sabha](https://flatgithub.com/Vonter/india-election-affidavits?filename=csv%2FLok%20Sabha%2FCandidates.csv&sha=27d625dfc97ed9d1372ffbcc72b31d6fc40a1dde&stickyColumnName=Candidate)
+- [State Assemblies](https://flatgithub.com/Vonter/india-election-affidavits?filename=csv%2FState%20Assemblies%2FCandidates.csv&sha=1cd9a2bbeb166170b7366fdced2889a625470871&stickyColumnName=Candidate)
+- [All Candidates](https://flatgithub.com/Vonter/india-election-affidavits?filename=csv%2FCandidates.csv&sha=27d625dfc97ed9d1372ffbcc72b31d6fc40a1dde&stickyColumnName=Candidate)
 
 More CSV files can be found under the [csv/](csv) folder in this repository.
 
